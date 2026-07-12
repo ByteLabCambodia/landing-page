@@ -53,6 +53,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+  appleWebApp: {
+    title: "ByteLab",
+  },
 };
 
 export default function RootLayout({
