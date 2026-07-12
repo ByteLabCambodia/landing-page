@@ -82,13 +82,13 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                className="rounded-full bg-primary px-8 py-4 font-display text-base font-semibold text-white shadow-lg shadow-primary/20 transition-transform hover:scale-105 hover:bg-primary-deep"
+                className="rounded-full bg-primary px-8 py-4 font-rigid text-base font-semibold text-white shadow-lg shadow-primary/20 transition-transform hover:scale-105 hover:bg-primary-deep"
               >
                 {t.hero.cta}
               </a>
               <a
                 href="#what-we-do"
-                className="rounded-full border-2 border-blue px-8 py-4 font-display text-base font-semibold text-blue transition-colors hover:bg-blue hover:text-white"
+                className="rounded-full border-2 border-blue px-8 py-4 font-rigid text-base font-semibold text-blue transition-colors hover:bg-blue hover:text-white"
               >
                 {t.nav.whatWeDo}
               </a>

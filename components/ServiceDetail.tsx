@@ -54,7 +54,7 @@ function ServiceBody({ index }: { index: number }) {
                 </span>
               </Reveal>
               <Reveal delay={0.12}>
-                <h1 className="mt-5 font-display text-4xl font-bold text-ink md:text-6xl">
+                <h1 className="mt-5 font-rigid text-4xl font-bold text-ink md:text-6xl">
                   {item.title}
                 </h1>
               </Reveal>
@@ -64,7 +64,7 @@ function ServiceBody({ index }: { index: number }) {
               <Reveal delay={0.28}>
                 <Link
                   href="/#contact"
-                  className="mt-8 inline-block rounded-full bg-primary px-7 py-3.5 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
+                  className="mt-8 inline-block rounded-full bg-primary px-7 py-3.5 font-rigid text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
                 >
                   {t.nav.cta}
                 </Link>
@@ -93,7 +93,7 @@ function ServiceBody({ index }: { index: number }) {
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h2 className="mt-4 font-display text-xl font-bold text-ink md:text-2xl">
+                  <h2 className="mt-4 font-rigid text-xl font-bold text-ink md:text-2xl">
                     {f.title}
                   </h2>
                   <p className="mt-2 text-slate">{f.body}</p>
@@ -104,7 +104,7 @@ function ServiceBody({ index }: { index: number }) {
 
           {/* Who it's for */}
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-16 max-w-2xl text-center font-display text-2xl font-semibold text-ink md:text-3xl">
+            <p className="mx-auto mt-16 max-w-2xl text-center font-rigid text-2xl font-semibold text-ink md:text-3xl">
               {item.detail.audience}
             </p>
           </Reveal>
@@ -112,7 +112,7 @@ function ServiceBody({ index }: { index: number }) {
             <div className="mt-8 text-center">
               <Link
                 href="/#contact"
-                className="inline-block rounded-full bg-primary px-8 py-4 font-display text-base font-semibold text-white transition-colors hover:bg-primary-deep"
+                className="inline-block rounded-full bg-primary px-8 py-4 font-rigid text-base font-semibold text-white transition-colors hover:bg-primary-deep"
               >
                 {t.nav.cta}
               </Link>

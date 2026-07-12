@@ -33,7 +33,7 @@ export default function Mission() {
         </Reveal>
         <p
           ref={ref}
-          className="font-display text-3xl leading-snug font-semibold sm:text-4xl md:text-5xl"
+          className="font-rigid text-3xl leading-snug font-semibold sm:text-4xl md:text-5xl"
         >
           {words.map((word, i) => (
             <Word

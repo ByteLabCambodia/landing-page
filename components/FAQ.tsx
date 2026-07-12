@@ -20,7 +20,7 @@ export default function FAQ() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display text-4xl font-bold text-ink md:text-5xl">{t.faq.title}</h2>
+          <h2 className="font-rigid text-4xl font-bold text-ink md:text-5xl">{t.faq.title}</h2>
         </Reveal>
 
         <div className="mt-12 divide-y divide-line rounded-3xl border border-line">
@@ -33,13 +33,13 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8"
                 >
-                  <span className={`font-display font-semibold ${isOpen ? "text-primary-deep" : "text-ink"}`}>
+                  <span className={`font-rigid font-semibold ${isOpen ? "text-primary-deep" : "text-ink"}`}>
                     {item.q}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={prefersReduced ? { duration: 0 } : { duration: 0.2 }}
-                    className={`shrink-0 font-display text-xl ${isOpen ? "text-primary" : "text-blue"}`}
+                    className={`shrink-0 font-rigid text-xl ${isOpen ? "text-primary" : "text-blue"}`}
                     aria-hidden="true"
                   >
                     +

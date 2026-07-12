@@ -21,7 +21,7 @@ export default function ForYou() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display text-4xl font-bold text-ink md:text-5xl">{t.forYou.title}</h2>
+          <h2 className="font-rigid text-4xl font-bold text-ink md:text-5xl">{t.forYou.title}</h2>
         </Reveal>
 
         <Reveal delay={0.2}>
@@ -32,7 +32,7 @@ export default function ForYou() {
                 role="tab"
                 aria-selected={i === active}
                 onClick={() => setActive(i)}
-                className={`relative rounded-full px-5 py-2.5 font-display text-sm font-semibold transition-colors ${
+                className={`relative rounded-full px-5 py-2.5 font-rigid text-sm font-semibold transition-colors ${
                   i === active ? "text-white" : "text-slate hover:text-primary"
                 }`}
               >
@@ -58,7 +58,7 @@ export default function ForYou() {
               exit={prefersReduced ? undefined : { opacity: 0, y: -10 }}
               transition={{ duration: 0.25 }}
             >
-              <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+              <h3 className="font-rigid text-2xl font-bold text-ink md:text-3xl">
                 {audience.title}
               </h3>
               <p className="mt-3 max-w-2xl text-lg text-slate">{audience.body}</p>

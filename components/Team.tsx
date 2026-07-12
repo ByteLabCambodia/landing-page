@@ -22,7 +22,7 @@ export default function Team() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.team.title}
           </h2>
         </Reveal>
@@ -42,13 +42,13 @@ export default function Team() {
             >
               {/* photo placeholder — swap for <Image> */}
               <div
-                className={`mx-auto grid size-20 place-items-center rounded-full font-display text-2xl font-bold md:size-24 ${
+                className={`mx-auto grid size-20 place-items-center rounded-full font-rigid text-2xl font-bold md:size-24 ${
                   i % 2 === 0 ? "bg-mist text-primary-deep" : "bg-mist text-blue-deep"
                 }`}
               >
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <p className="mt-4 font-display font-semibold text-ink">{m.name}</p>
+              <p className="mt-4 font-rigid font-semibold text-ink">{m.name}</p>
               <p className="mt-1 text-sm text-slate">{m.role}</p>
             </motion.div>
           ))}

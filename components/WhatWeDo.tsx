@@ -25,7 +25,7 @@ export default function WhatWeDo() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.whatWeDo.title}
           </h2>
         </Reveal>
@@ -87,7 +87,7 @@ function ServiceBand({
       <motion.span
         aria-hidden="true"
         style={{ y: ghostY, opacity: ghostOpacity }}
-        className={`pointer-events-none absolute top-8 font-display text-[11rem] leading-none font-bold text-ink/5 select-none md:text-[19rem] ${
+        className={`pointer-events-none absolute top-8 font-rigid text-[11rem] leading-none font-bold text-ink/5 select-none md:text-[19rem] ${
           flip ? "right-4" : "left-4"
         }`}
       >
@@ -112,7 +112,7 @@ function ServiceBand({
             {item.tag}
           </span>
 
-          <h3 className="mt-6 font-display text-3xl font-bold text-ink md:text-5xl">
+          <h3 className="mt-6 font-rigid text-3xl font-bold text-ink md:text-5xl">
             <Link href={href} className="transition-colors hover:text-primary">
               {item.title}
             </Link>
@@ -136,7 +136,7 @@ function ServiceBand({
 
           <Link
             href={href}
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
+            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-rigid text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
           >
             {explore}
             <span className="transition-transform group-hover:translate-x-1">→</span>

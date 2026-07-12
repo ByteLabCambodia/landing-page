@@ -10,6 +10,19 @@ const byteLab = localFont({
   weight: "400",
 });
 
+
+const rigid = localFont({
+  src: [
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Thin.otf", weight: "100", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraLight.otf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Light.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_SemiBold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraBold.otf", weight: "800", style: "normal" },
+  ],
+  variable: "--font-rigid",
+});
 // Body face
 const plex = IBM_Plex_Sans({
   variable: "--font-plex",
@@ -45,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${byteLab.variable} ${plex.variable} ${plexMono.variable} ${khmer.variable} h-full antialiased`}
+      className={`${byteLab.variable} ${rigid.variable} ${plex.variable} ${plexMono.variable} ${khmer.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
