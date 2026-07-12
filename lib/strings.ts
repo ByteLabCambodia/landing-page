@@ -344,13 +344,13 @@ export const strings = {
         email: "Email address",
         message: "What would you like to build or ask?",
         submit: "Send message",
-        sent: "Message ready in your email app — press send!",
+        sent: "Message sent — we'll get back to you soon!",
       },
       details: {
         emailLabel: "Email",
-        email: "[email]", // TODO: real email, e.g. hello@bytelab.com.kh
+        email: "info@bytelabkh.com", // TODO: real email, e.g. hello@bytelab.com.kh
         phoneLabel: "Phone",
-        phone: "[phone]", // TODO: real phone number
+        phone: "+855 93 554 082", // TODO: real phone number
         locationLabel: "Location",
         location: "Phnom Penh, Cambodia",
         socialLabel: "Follow us",
@@ -695,7 +695,7 @@ export const strings = {
         email: "អាសយដ្ឋានអ៊ីមែល",
         message: "តើអ្នកចង់បង្កើត ឬសួរអ្វី?",
         submit: "ផ្ញើសារ",
-        sent: "សាររួចរាល់ក្នុងកម្មវិធីអ៊ីមែលរបស់អ្នក — ចុចផ្ញើ!",
+        sent: "សាររបស់អ្នកបានផ្ញើហើយ — យើងខ្ញុំនឹងឆ្លើយតបទៅអ្នកឆាប់ៗនេះ!",
       },
       details: {
         emailLabel: "អ៊ីមែល",
