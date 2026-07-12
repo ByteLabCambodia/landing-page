@@ -5,7 +5,7 @@ import {
   SITE_URL,
   SITE_NAME,
   SITE_ALT_NAME,
-  SITE_TAGLINE,
+  SITE_SEO_TITLE,
   SITE_DESCRIPTION,
   SOCIAL_LINKS,
 } from "@/lib/site";
@@ -45,17 +45,20 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-// Khmer support — falls back automatically when Khmer text renders
+// Khmer support — falls back automatically when Khmer text renders.
+// adjustFontFallback off: Next.js has no built-in metrics for Google Sans,
+// so it can't generate a size-matched fallback anyway (silences build warning).
 const khmer = Google_Sans({
   variable: "--font-khmer",
   subsets: ["khmer"],
   weight: ["400", "500", "600", "700"],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    default: SITE_SEO_TITLE,
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -63,9 +66,12 @@ export const metadata: Metadata = {
   keywords: [
     "ByteLab",
     "Byte Lab",
+    "robotics Cambodia",
     "robotics education Cambodia",
-    "robot kits",
-    "STEM education",
+    "robot kits Cambodia",
+    "school robotics",
+    "STEM education Cambodia",
+    "Robocon Cambodia",
     "learning platform",
     "Phnom Penh",
   ],
@@ -73,13 +79,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    title: SITE_SEO_TITLE,
     description: SITE_DESCRIPTION,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    title: SITE_SEO_TITLE,
     description: SITE_DESCRIPTION,
   },
   verification: {

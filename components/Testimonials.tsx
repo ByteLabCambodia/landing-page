@@ -23,7 +23,7 @@ export default function Testimonials() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {t.testimonials.quotes.map((q, i) => (
-            <Reveal key={q.name} delay={i * 0.1}>
+            <Reveal key={i} delay={i * 0.1}>
               <figure className="flex h-full flex-col rounded-3xl border border-line bg-mist p-7 md:p-8">
                 <span
                   aria-hidden="true"
