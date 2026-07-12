@@ -20,7 +20,7 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   // Text fades only in the drive phase
-  const contentOpacity = useTransform(scrollYProgress, [0.55, 0.9], [1, still ? 1 : 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.55, 1], [1, still ? 1 : 0]);
   const contentY = useTransform(scrollYProgress, [0.55, 1], [0, still ? 0 : 80]);
 
   return (
