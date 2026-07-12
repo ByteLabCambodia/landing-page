@@ -72,7 +72,11 @@ export const strings = {
           tag: "Software",
           title: "Digital Learning Platform",
           body: "Online lessons and guided projects in robotics and IoT, designed for self-paced learning at home or structured use in class.",
-          points: ["Robotics & IoT lessons", "Guided projects", "Learn anywhere"],
+          points: [
+            "Robotics & IoT lessons",
+            "Guided projects",
+            "Learn anywhere",
+          ],
           detail: {
             intro:
               "The platform turns curiosity into a path. Lessons build on each other, projects end with something real, and learners can continue at home exactly where the classroom left off.",
@@ -199,24 +203,34 @@ export const strings = {
       title: "Achievements",
       items: [
         {
-          year: "[2023]",
-          title: "[ByteLab founded]",
-          body: "[Short line about how ByteLab started — replace with the real story.]",
+          year: "2023",
+          title: "ByteLab founded",
+          body: "Started as a school project by 8 team members — and scaled step by step into the startup we are today.",
         },
         {
-          year: "[2024]",
-          title: "[First robot car kit launched]",
-          body: "[Milestone description — e.g. first production run, first classroom pilot.]",
+          year: "2023",
+          title: "MRC 2023: 1st Place Winner",
+          body: "Won first place representing Team Cambodia.",
         },
         {
-          year: "[2024]",
-          title: "[National STEM festival]",
-          body: "[Award, exhibition, or competition result goes here.]",
+          year: "2024",
+          title: "First robot launched",
+          body: "Launched our first robot at Toutes à l'école (Happy Chandara School).",
         },
         {
-          year: "[2025]",
-          title: "[Major partnership signed]",
-          body: "[Partnership or expansion milestone goes here.]",
+          year: "2026",
+          title: "ACTSmart Cohort 2: 2nd Place Winner",
+          body: "Awarded second place in the ACTSmart incubation program, Cohort 2.",
+        },
+        {
+          year: "2026",
+          title: "ACIR+ Program Incubation: Second Prize",
+          body: "Won second prize at the ACIR+ Program Incubation of Start-Ups and Innovation, held at VKU in Da Nang, Vietnam.",
+        },
+        {
+          year: "Ongoing",
+          title: "Agriculture Drone Project",
+          body: "Building drone technology to support Cambodian agriculture.",
         },
       ],
     },
@@ -238,16 +252,63 @@ export const strings = {
       title: "Meet the 8 makers behind ByteLab",
       intro:
         "Engineers, educators, and builders — all in Phnom Penh, all obsessed with what learners can create.",
-      // [TODO: real names, roles, and photos]
       members: [
-        { name: "[Member name]", role: "[Co-Founder & CEO]" },
-        { name: "[Member name]", role: "[Co-Founder & CTO]" },
-        { name: "[Member name]", role: "[Hardware Lead]" },
-        { name: "[Member name]", role: "[Curriculum Lead]" },
-        { name: "[Member name]", role: "[Software Engineer]" },
-        { name: "[Member name]", role: "[Education Outreach]" },
-        { name: "[Member name]", role: "[Community Manager]" },
-        { name: "[Member name]", role: "[Industrial Designer]" },
+        {
+          name: "Chhoeun Reaksa",
+          role: "Product Development Director",
+          description:
+            "Leading the vision for our educational products and ensuring they meet global standards.",
+          expertise: ["Product Strategy", "Leadership", "Education"],
+        },
+        {
+          name: "Pun Solita",
+          role: "Communication Director",
+          description:
+            "Managing internal and external communications to build a strong community around Byte Lab.",
+          expertise: ["Communication", "Finance", "Public Relations"],
+        },
+        {
+          name: "Meng Oudom",
+          role: "Operation & Logistic Director",
+          description:
+            "Overseeing daily operations and leading software development initiatives.",
+          expertise: ["Operations", "Software Development", "Logistics"],
+        },
+        {
+          name: "Gnep Vandara",
+          role: "Sale & Logistic Specialist",
+          description:
+            "Ensuring our kits reach schools and students efficiently while managing sales partners.",
+          expertise: ["Sales", "Logistics", "Customer Relations"],
+        },
+        {
+          name: "Hoy Seiha",
+          role: "Business Analyst",
+          description:
+            "Analyzing market trends and business performance to drive growth and sustainability.",
+          expertise: ["Business Analysis", "Strategy", "Market Research"],
+        },
+        {
+          name: "Sophat Sophana",
+          role: "Robotics Software Engineer",
+          description:
+            "Designing and refining the electronic components that power our robots.",
+          expertise: ["Electronics", "Circuit Design", "Prototyping"],
+        },
+        {
+          name: "Chheng Maraviraktep",
+          role: "Mechanic Engineer",
+          description:
+            "Engineering robust and kid-friendly mechanical parts for our robot kits.",
+          expertise: ["Mechanical Engineering", "3D Design", "Manufacturing"],
+        },
+        {
+          name: "Cheang Thornsopanha",
+          role: "Web Developer",
+          description:
+            "Building our digital platforms to support students and teachers online.",
+          expertise: ["Web Development", "UI/UX", "React"],
+        },
       ],
     },
     testimonials: {
@@ -256,21 +317,21 @@ export const strings = {
       quotes: [
         {
           quote:
-            "[Placeholder quote — e.g. \"My daughter built her first robot in one afternoon and hasn't stopped talking about it since.\"]",
-          name: "[Parent name]",
-          role: "Parent",
+            "I can build my own robot car now! Thanks to the coaches for giving guidance — I wouldn't be where I am today without you.",
+          name: "Student testimony",
+          role: "AUPP High School",
         },
         {
           quote:
-            "[Placeholder quote — e.g. \"ByteLab made it possible for our school to run a robotics program with zero prior experience.\"]",
-          name: "[Director name]",
-          role: "School director",
+            "Robotics class is my favorite part of the week. I built a robot that follows a line all by myself!",
+          name: "Student testimony",
+          role: "Lycée Français René Descartes",
         },
         {
           quote:
-            "[Placeholder quote — e.g. \"I thought coding was for other people. Now my robot follows lines I drew myself.\"]",
-          name: "[Student name]",
-          role: "Student, 14",
+            "Learning with ByteLab is so much fun — my friends and I can't wait for the next session.",
+          name: "Student testimony",
+          role: "Lycée Français René Descartes",
         },
       ],
     },
@@ -397,7 +458,11 @@ export const strings = {
           tag: "ហាដវែរ",
           title: "ឈុតរថយន្តរ៉ូបូត Plug & Play",
           body: "ឈុតឧបករណ៍តម្លៃសមរម្យ ងាយស្រួលសម្រាប់អ្នកចាប់ផ្តើម — គ្មានការផ្សារ គ្មានការភ័យខ្លាច គ្រាន់តែដំឡើង សរសេរកូដ និងបើកបរ។",
-          points: ["ងាយសម្រាប់អ្នកចាប់ផ្តើម", "តម្លៃសមរម្យ", "ត្រៀមសម្រាប់ថ្នាក់រៀន"],
+          points: [
+            "ងាយសម្រាប់អ្នកចាប់ផ្តើម",
+            "តម្លៃសមរម្យ",
+            "ត្រៀមសម្រាប់ថ្នាក់រៀន",
+          ],
           detail: {
             intro:
               "ឈុតរថយន្តរ៉ូបូតរបស់យើងត្រូវបានរចនាឡើងដើម្បីធ្វើឱ្យម៉ោងដំបូងនៃរ៉ូបូតិកមានអារម្មណ៍ដូចការលេង មិនមែនកិច្ចការផ្ទះទេ។ អ្វីៗគ្រប់យ៉ាងភ្ជាប់គ្នាបានយ៉ាងងាយ ហើយនៅចុងបញ្ចប់នៃវគ្គមួយ រ៉ូបូតរបស់អ្នកកំពុងបើកបរ។",
@@ -554,24 +619,34 @@ export const strings = {
       title: "សមិទ្ធផល",
       items: [
         {
-          year: "[2023]",
-          title: "[បង្កើត ByteLab]",
-          body: "[ប្រវត្តិខ្លីអំពីការចាប់ផ្តើមរបស់ ByteLab — ជំនួសដោយរឿងពិត។]",
+          year: "2023",
+          title: "បង្កើត ByteLab",
+          body: "ចាប់ផ្តើមជាគម្រោងសាលារៀនដោយសមាជិកក្រុម ៨ នាក់ ហើយបានពង្រីកបន្តិចម្តងៗ ក្លាយជាស្ថាប័នអាជីវកម្មដូចសព្វថ្ងៃ។",
         },
         {
-          year: "[2024]",
-          title: "[បើកដំណើរការឈុតរថយន្តរ៉ូបូតដំបូង]",
-          body: "[ការពិពណ៌នាចំណុចសំខាន់ — ឧ. ការផលិតដំបូង ការសាកល្បងថ្នាក់រៀនដំបូង។]",
+          year: "2023",
+          title: "MRC 2023: ជើងឯកលេខ ១",
+          body: "ឈ្នះចំណាត់ថ្នាក់លេខ ១ ដោយតំណាងក្រុមកម្ពុជា។",
         },
         {
-          year: "[2024]",
-          title: "[មហោស្រព STEM ជាតិ]",
-          body: "[រង្វាន់ ការតាំងបង្ហាញ ឬលទ្ធផលប្រកួតនៅទីនេះ។]",
+          year: "2024",
+          title: "បើកដំណើរការរ៉ូបូតដំបូង",
+          body: "បើកដំណើរការរ៉ូបូតដំបូងរបស់យើងនៅសាលា Toutes à l'école (Happy Chandara School)។",
         },
         {
-          year: "[2025]",
-          title: "[ចុះហត្ថលេខាភាពជាដៃគូសំខាន់]",
-          body: "[ចំណុចសំខាន់នៃភាពជាដៃគូ ឬការពង្រីកនៅទីនេះ។]",
+          year: "2026",
+          title: "ACTSmart Cohort 2: ចំណាត់ថ្នាក់លេខ ២",
+          body: "ទទួលបានចំណាត់ថ្នាក់លេខ ២ ក្នុងកម្មវិធី ACTSmart Cohort 2។",
+        },
+        {
+          year: "2026",
+          title: "ACIR+ Program Incubation: រង្វាន់លេខ ២",
+          body: "ឈ្នះរង្វាន់លេខ ២ ក្នុងកម្មវិធី ACIR+ Program Incubation of Start-Ups and Innovation នៅសាកលវិទ្យាល័យ VKU ទីក្រុងដាណាំង ប្រទេសវៀតណាម។",
+        },
+        {
+          year: "កំពុងបន្ត",
+          title: "គម្រោងដ្រូនកសិកម្ម",
+          body: "កសាងបច្ចេកវិទ្យាដ្រូនដើម្បីគាំទ្រវិស័យកសិកម្មកម្ពុជា។",
         },
       ],
     },
@@ -594,14 +669,62 @@ export const strings = {
       intro:
         "វិស្វករ អ្នកអប់រំ និងអ្នកបង្កើត — ទាំងអស់នៅភ្នំពេញ ទាំងអស់ចូលចិត្តអ្វីដែលអ្នកសិក្សាអាចបង្កើតបាន។",
       members: [
-        { name: "[ឈ្មោះសមាជិក]", role: "[សហស្ថាបនិក & CEO]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[សហស្ថាបនិក & CTO]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[ប្រធានហាដវែរ]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[ប្រធានកម្មវិធីសិក្សា]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[វិស្វករសូហ្វវែរ]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[ផ្សព្វផ្សាយអប់រំ]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[អ្នកគ្រប់គ្រងសហគមន៍]" },
-        { name: "[ឈ្មោះសមាជិក]", role: "[អ្នករចនាឧស្សាហកម្ម]" },
+        {
+          name: "Chhoeun Reaksa",
+          role: "នាយកអភិវឌ្ឍន៍ផលិតផល",
+          description:
+            "ដឹកនាំចក្ខុវិស័យសម្រាប់ផលិតផលអប់រំរបស់យើង និងធានាថាវាឈានដល់ស្តង់ដារអន្តរជាតិ។",
+          expertise: ["យុទ្ធសាស្ត្រផលិតផល", "ភាពជាអ្នកដឹកនាំ", "ការអប់រំ"],
+        },
+        {
+          name: "Pun Solita",
+          role: "នាយកទំនាក់ទំនង",
+          description:
+            "គ្រប់គ្រងទំនាក់ទំនងផ្ទៃក្នុង និងខាងក្រៅ ដើម្បីកសាងសហគមន៍រឹងមាំជុំវិញ Byte Lab។",
+          expertise: ["ទំនាក់ទំនង", "ហិរញ្ញវត្ថុ", "ទំនាក់ទំនងសាធារណៈ"],
+        },
+        {
+          name: "Meng Oudom",
+          role: "នាយកប្រតិបត្តិការ និងឡូជីស្ទិក",
+          description:
+            "ត្រួតពិនិត្យប្រតិបត្តិការប្រចាំថ្ងៃ និងដឹកនាំគំនិតផ្តួចផ្តើមអភិវឌ្ឍន៍សូហ្វវែរ។",
+          expertise: ["ប្រតិបត្តិការ", "អភិវឌ្ឍន៍សូហ្វវែរ", "ឡូជីស្ទិក"],
+        },
+        {
+          name: "Gnep Vandara",
+          role: "អ្នកឯកទេសផ្នែកលក់ និងឡូជីស្ទិក",
+          description:
+            "ធានាថាឧបករណ៍របស់យើងទៅដល់សាលា និងសិស្សប្រកបដោយប្រសិទ្ធភាព ខណៈគ្រប់គ្រងដៃគូលក់។",
+          expertise: ["ការលក់", "ឡូជីស្ទិក", "ទំនាក់ទំនងអតិថិជន"],
+        },
+        {
+          name: "Hoy Seiha",
+          role: "អ្នកវិភាគអាជីវកម្ម",
+          description:
+            "វិភាគនិន្នាការទីផ្សារ និងដំណើរការអាជីវកម្ម ដើម្បីជំរុញកំណើន និងនិរន្តរភាព។",
+          expertise: ["ការវិភាគអាជីវកម្ម", "យុទ្ធសាស្ត្រ", "ស្រាវជ្រាវទីផ្សារ"],
+        },
+        {
+          name: "Sophat Sophana",
+          role: "វិស្វករសូហ្វវែររ៉ូបូតិក",
+          description:
+            "រចនា និងកែលម្អគ្រឿងអេឡិចត្រូនិកដែលផ្តល់ថាមពលដល់រ៉ូបូតរបស់យើង។",
+          expertise: ["អេឡិចត្រូនិក", "រចនាសៀគ្វី", "បង្កើតគំរូ"],
+        },
+        {
+          name: "Chheng Maraviraktep",
+          role: "វិស្វករមេកានិក",
+          description:
+            "បង្កើតគ្រឿងមេកានិករឹងមាំ និងសមរម្យសម្រាប់កុមារ សម្រាប់ឧបករណ៍រ៉ូបូតរបស់យើង។",
+          expertise: ["វិស្វកម្មមេកានិក", "រចនា 3D", "ផលិតកម្ម"],
+        },
+        {
+          name: "Cheang Thornsopanha",
+          role: "អ្នកអភិវឌ្ឍន៍វេប",
+          description:
+            "កសាងវេទិកាឌីជីថលរបស់យើង ដើម្បីគាំទ្រសិស្ស និងគ្រូតាមអ៊ីនធឺណិត។",
+          expertise: ["អភិវឌ្ឍន៍វេប", "UI/UX", "React"],
+        },
       ],
     },
     testimonials: {
@@ -609,19 +732,22 @@ export const strings = {
       title: "អ្វីដែលគេនិយាយ",
       quotes: [
         {
-          quote: "[សម្រង់បណ្តោះអាសន្ន — ជំនួសដោយសក្ខីកម្មពិតពីមាតាបិតា។]",
-          name: "[ឈ្មោះមាតាបិតា]",
-          role: "មាតាបិតា",
+          quote:
+            "ឥឡូវខ្ញុំអាចសង់រថយន្តរ៉ូបូតដោយខ្លួនឯងបានហើយ! អរគុណដល់គ្រូបង្វឹកសម្រាប់ការណែនាំ — បើគ្មានពួកគាត់ ខ្ញុំមិនអាចមកដល់ថ្ងៃនេះបានទេ។",
+          name: "សក្ខីកម្មសិស្ស",
+          role: "វិទ្យាល័យ AUPP",
         },
         {
-          quote: "[សម្រង់បណ្តោះអាសន្ន — ជំនួសដោយសក្ខីកម្មពិតពីនាយកសាលា។]",
-          name: "[ឈ្មោះនាយក]",
-          role: "នាយកសាលា",
+          quote:
+            "ថ្នាក់រ៉ូបូតិកជាផ្នែកដែលខ្ញុំចូលចិត្តបំផុតក្នុងសប្តាហ៍។ ខ្ញុំសង់រ៉ូបូតដើរតាមបន្ទាត់ដោយខ្លួនឯង!",
+          name: "សក្ខីកម្មសិស្ស",
+          role: "Lycée Français René Descartes",
         },
         {
-          quote: "[សម្រង់បណ្តោះអាសន្ន — ជំនួសដោយសក្ខីកម្មពិតពីសិស្ស។]",
-          name: "[ឈ្មោះសិស្ស]",
-          role: "សិស្ស អាយុ ១៤",
+          quote:
+            "រៀនជាមួយ ByteLab សប្បាយណាស់ — ខ្ញុំនិងមិត្តភក្តិទន្ទឹងរង់ចាំវគ្គបន្ទាប់។",
+          name: "សក្ខីកម្មសិស្ស",
+          role: "Lycée Français René Descartes",
         },
       ],
     },
@@ -699,9 +825,9 @@ export const strings = {
       },
       details: {
         emailLabel: "អ៊ីមែល",
-        email: "[email]",
+        email: "info@bytelabkh.com",
         phoneLabel: "ទូរស័ព្ទ",
-        phone: "[phone]",
+        phone: "+855 93 554 082",
         locationLabel: "ទីតាំង",
         location: "ភ្នំពេញ កម្ពុជា",
         socialLabel: "តាមដានយើង",
