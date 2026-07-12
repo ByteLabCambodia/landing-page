@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     <section ref={ref} id="top" className={still ? "relative" : "relative h-[220vh]"}>
-      <div className="sticky top-0 flex h-svh flex-col justify-center overflow-hidden bg-white text-ink">
+      <div className="sticky top-0 flex h-svh flex-col justify-start overflow-hidden bg-white text-ink md:justify-center">
         {/* graph-paper texture, like an engineering notebook */}
         <svg className="absolute inset-0 size-full opacity-60" aria-hidden="true">
           <defs>
