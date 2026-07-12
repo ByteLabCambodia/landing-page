@@ -1,6 +1,8 @@
 {
-  "name": "ByteLab",
-  "short_name": "ByteLab",
+  "name": "Byte Lab",
+  "short_name": "Byte Lab",
+  "description": "Hands-on robotics education in Cambodia: robot car kits, a digital learning platform, project-based programs, and R&D.",
+  "start_url": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { LangProvider } from "@/components/LangProvider";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -15,6 +16,10 @@ import AboutTeaser from "@/components/AboutTeaser";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

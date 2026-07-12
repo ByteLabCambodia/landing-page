@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono, Google_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import { SITE_URL } from "@/lib/site";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_ALT_NAME,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  SOCIAL_LINKS,
+} from "@/lib/site";
 import "./globals.css";
 
 // Display face — ByteLab brand font (headlines only, single weight)
@@ -47,16 +54,68 @@ const khmer = Google_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "ByteLab — Imagine. Build. Innovate.",
-  description:
-    "Hands-on robotics education in Cambodia: robot car kits, a digital learning platform, project-based programs, and R&D.",
+  title: {
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "ByteLab",
+    "Byte Lab",
+    "robotics education Cambodia",
+    "robot kits",
+    "STEM education",
+    "learning platform",
+    "Phnom Penh",
+  ],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+  },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
   appleWebApp: {
-    title: "ByteLab",
+    title: SITE_NAME,
   },
 };
+
+// Structured data that tells Google the official site name ("ByteLab" /
+// "Byte Lab") and links the site to its social profiles. Rendered once,
+// site-wide. https://developers.google.com/search/docs/appearance/site-names
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    alternateName: SITE_ALT_NAME,
+    url: SITE_URL,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: SITE_NAME,
+    alternateName: SITE_ALT_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/web-app-manifest-512x512.png`,
+    description: SITE_DESCRIPTION,
+    sameAs: SOCIAL_LINKS,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "KH",
+    },
+  },
+];
 
 export default function RootLayout({
   children,
@@ -68,7 +127,15 @@ export default function RootLayout({
       lang="en"
       className={`${byteLab.variable} ${rigid.variable} ${plex.variable} ${plexMono.variable} ${khmer.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
