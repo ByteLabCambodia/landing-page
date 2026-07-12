@@ -35,7 +35,7 @@ export default function Contact() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-6xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-6xl">
             {t.contact.title}
           </h2>
         </Reveal>
@@ -61,7 +61,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-2 rounded-full bg-primary px-8 py-4 font-display text-base font-semibold text-white transition-colors hover:bg-primary-deep"
+                className="mt-2 rounded-full bg-primary px-8 py-4 font-rigid text-base font-semibold text-white transition-colors hover:bg-primary-deep"
               >
                 {t.contact.form.submit}
               </button>

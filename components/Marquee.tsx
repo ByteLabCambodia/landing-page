@@ -19,8 +19,8 @@ export default function Marquee() {
   const x1 = useTransform(scrollYProgress, [0, 1], ["0%", prefersReduced ? "0%" : "-18%"]);
   const x2 = useTransform(scrollYProgress, [0, 1], ["-18%", prefersReduced ? "-18%" : "0%"]);
 
-  const row1 = t.hero.words.join(" ");
-  const row2 = ["Robotics", "IoT", "Coding", "STEM"].join(" · ") + " · ";
+  const row1 = t.hero.words;
+  const row2 = ["Robotics", "IoT", "Coding", "STEM"];
 
   return (
     <div ref={ref} aria-hidden="true" className="overflow-hidden border-y border-line bg-white py-8 md:py-10">
@@ -28,11 +28,14 @@ export default function Marquee() {
         {Array.from({ length: 4 }).map((_, i) => (
           <span
             key={i}
-            className="mr-10 inline-block font-display text-5xl font-bold tracking-tight text-ink md:text-7xl"
+            className="mr-10 inline-block font-display text-5xl font-bold tracking-wide text-ink md:mr-20 md:text-7xl"
           >
-            {row1.split(" ").map((w, j) => (
-              <span key={j} className={j === 2 ? "text-primary" : ""}>
-                {w}{" "}
+            {row1.map((w, j) => (
+              <span
+                key={j}
+                className={`inline-block mr-6 last:mr-0 md:mr-8 ${j === 2 ? "text-primary" : ""}`}
+              >
+                {w}
               </span>
             ))}
           </span>
@@ -42,10 +45,14 @@ export default function Marquee() {
         {Array.from({ length: 6 }).map((_, i) => (
           <span
             key={i}
-            className="inline-block font-display text-4xl font-bold tracking-tight text-transparent md:text-6xl"
+            className="inline-block font-display text-4xl font-bold tracking-wider text-transparent md:text-6xl"
             style={{ WebkitTextStroke: "1.5px var(--brand-blue)" }}
           >
-            {row2}
+            {row2.map((w, j) => (
+              <span key={j} className="inline-block mr-6 md:mr-8">
+                {w} <span className="mx-4 md:mx-6">·</span>
+              </span>
+            ))}
           </span>
         ))}
       </motion.div>

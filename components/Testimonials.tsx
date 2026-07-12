@@ -16,7 +16,7 @@ export default function Testimonials() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.testimonials.title}
           </h2>
         </Reveal>
@@ -27,13 +27,13 @@ export default function Testimonials() {
               <figure className="flex h-full flex-col rounded-3xl border border-line bg-mist p-7 md:p-8">
                 <span
                   aria-hidden="true"
-                  className={`font-display text-5xl leading-none ${i % 2 === 0 ? "text-primary" : "text-blue"}`}
+                  className={`font-rigid text-5xl leading-none ${i % 2 === 0 ? "text-primary" : "text-blue"}`}
                 >
                   &ldquo;
                 </span>
                 <blockquote className="mt-2 flex-1 text-slate">{q.quote}</blockquote>
                 <figcaption className="mt-6">
-                  <p className="font-display font-semibold text-ink">{q.name}</p>
+                  <p className="font-rigid font-semibold text-ink">{q.name}</p>
                   <p className="text-sm text-slate">{q.role}</p>
                 </figcaption>
               </figure>

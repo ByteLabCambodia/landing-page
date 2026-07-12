@@ -57,7 +57,8 @@
   --color-mist: var(--brand-mist);
   --color-line: var(--brand-line);
 
-  --font-display: var(--font-chakra), var(--font-khmer), sans-serif;
+  --font-display: var(--font-bytelab), var(--font-khmer), sans-serif;
+  --font-rigid: var(--font-rigid), var(--font-khmer), sans-serif;
   --font-sans: var(--font-plex), var(--font-khmer), sans-serif;
   --font-mono: var(--font-plex-mono), monospace;
   --font-khmer: var(--font-khmer), sans-serif;

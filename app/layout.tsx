@@ -1,14 +1,28 @@
 import type { Metadata } from "next";
-import { Chakra_Petch, IBM_Plex_Sans, IBM_Plex_Mono, Noto_Sans_Khmer } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono, Google_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-// Display face — squared, techy, friendly (headlines only)
-const chakra = Chakra_Petch({
-  variable: "--font-chakra",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+// Display face — ByteLab brand font (headlines only, single weight)
+const byteLab = localFont({
+  src: "../public/fonts/Byte-Lab-Regular.ttf",
+  variable: "--font-bytelab",
+  weight: "400",
 });
 
+
+const rigid = localFont({
+  src: [
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Thin.otf", weight: "100", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraLight.otf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Light.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_SemiBold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraBold.otf", weight: "800", style: "normal" },
+  ],
+  variable: "--font-rigid",
+});
 // Body face
 const plex = IBM_Plex_Sans({
   variable: "--font-plex",
@@ -24,7 +38,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 // Khmer support — falls back automatically when Khmer text renders
-const khmer = Noto_Sans_Khmer({
+const khmer = Google_Sans({
   variable: "--font-khmer",
   subsets: ["khmer"],
   weight: ["400", "500", "600", "700"],
@@ -44,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${chakra.variable} ${plex.variable} ${plexMono.variable} ${khmer.variable} h-full antialiased`}
+      className={`${byteLab.variable} ${rigid.variable} ${plex.variable} ${plexMono.variable} ${khmer.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

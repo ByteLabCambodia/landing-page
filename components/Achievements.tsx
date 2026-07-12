@@ -16,7 +16,7 @@ export default function Achievements() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.achievements.title}
           </h2>
         </Reveal>
@@ -32,7 +32,7 @@ export default function Achievements() {
                   }`}
                 />
                 <p className="font-mono text-sm text-slate">{a.year}</p>
-                <h3 className="mt-1 font-display text-xl font-bold text-ink md:text-2xl">
+                <h3 className="mt-1 font-rigid text-xl font-bold text-ink md:text-2xl">
                   {a.title}
                 </h3>
                 <p className="mt-2 max-w-xl text-slate">{a.body}</p>

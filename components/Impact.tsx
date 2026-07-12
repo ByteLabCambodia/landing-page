@@ -18,7 +18,7 @@ export default function Impact() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.impact.title}
           </h2>
         </Reveal>
@@ -31,7 +31,7 @@ export default function Impact() {
           {t.impact.stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>
               <div className="rounded-3xl border border-line bg-white p-6 md:p-8">
-                <p className={`font-display text-4xl font-bold md:text-5xl ${i % 2 === 0 ? "text-primary" : "text-blue"}`}>
+                <p className={`font-rigid text-4xl font-bold md:text-5xl ${i % 2 === 0 ? "text-primary" : "text-blue"}`}>
                   <CountUp target={s.value} />
                   {s.suffix}
                 </p>

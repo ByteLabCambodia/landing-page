@@ -53,7 +53,7 @@ export default function Header() {
           <LangToggle lang={lang} setLang={setLang} />
           <Link
             href="/#contact"
-            className="rounded-full bg-primary px-5 py-2 font-display text-sm font-semibold text-white transition-transform hover:scale-105 hover:bg-primary-deep"
+            className="rounded-full bg-primary px-5 py-2 font-rigid text-sm font-semibold text-white transition-transform hover:scale-105 hover:bg-primary-deep"
           >
             {t.nav.cta}
           </Link>
@@ -95,7 +95,7 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-4 block rounded-full bg-primary px-5 py-3 text-center font-display text-sm font-semibold text-white"
+            className="mt-4 block rounded-full bg-primary px-5 py-3 text-center font-rigid text-sm font-semibold text-white"
           >
             {t.nav.cta}
           </Link>

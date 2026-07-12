@@ -27,7 +27,7 @@ export default function WhyUs() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl font-display text-4xl font-bold text-ink md:text-5xl">
+          <h2 className="max-w-2xl font-rigid text-4xl font-bold text-ink md:text-5xl">
             {t.whyUs.title}
           </h2>
         </Reveal>
@@ -54,7 +54,7 @@ export default function WhyUs() {
                     {icons[i]}
                   </svg>
                 </span>
-                <h3 className="mt-5 font-display text-xl font-bold text-ink md:text-2xl">
+                <h3 className="mt-5 font-rigid text-xl font-bold text-ink md:text-2xl">
                   {r.title}
                 </h3>
                 <p className="mt-2 text-slate">{r.body}</p>

@@ -38,7 +38,7 @@ function AboutHero() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className="font-display text-4xl font-bold text-ink md:text-6xl">
+          <h1 className="font-rigid text-4xl font-bold text-ink md:text-6xl">
             {t.about.hero.title}
           </h1>
         </Reveal>
