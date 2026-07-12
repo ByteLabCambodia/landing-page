@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono, Google_Sans } from "next/font/google";
 import localFont from "next/font/local";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Display face — ByteLab brand font (headlines only, single weight)
@@ -45,9 +46,13 @@ const khmer = Google_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "ByteLab — Imagine. Build. Innovate.",
   description:
     "Hands-on robotics education in Cambodia: robot car kits, a digital learning platform, project-based programs, and R&D.",
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
