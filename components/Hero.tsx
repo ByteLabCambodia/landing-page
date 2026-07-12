@@ -197,7 +197,7 @@ function AssemblyScene({ progress, still }: { progress: MotionValue<number>; sti
             <rect x="150" y="244" width="120" height="10" rx="5" fill="white" fillOpacity="0.35" />
             <path d="M370 250v40M386 250v40M402 250v40" stroke="white" strokeOpacity="0.4" strokeWidth="4" strokeLinecap="round" />
             {/* ByteLab wordmark on the side */}
-            <text x="278" y="262" fontFamily="var(--font-chakra)" fontWeight="700" fontSize="20" fill="white">
+            <text x="278" y="262" fontFamily="var(--font-bytelab)" fontWeight="700" fontSize="20" fill="white">
               Byte<tspan fill="var(--brand-blue)">Lab</tspan>
             </text>
           </motion.g>
