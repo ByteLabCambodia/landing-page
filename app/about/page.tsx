@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "About Us",
     description: strings.en.about.hero.body,
     url: "/about",
+    images: ["/OG_preview.jpg"],
   },
 };
 
