@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLang } from "./LangProvider";
 
@@ -11,12 +11,29 @@ const RobotModel = dynamic(() => import("./RobotModel"), { ssr: false });
  * Pinned, scroll-scrubbed hero (~2 viewports tall).
  * Renders the real 3D robot model (draggable) alongside the headline;
  * the headline fades out as the user scrolls through the pin.
+ *
+ * Entrance animations are CSS-only (.hero-rise) so the headline paints
+ * before hydration — with framer-motion `initial`, the SSR HTML ships with
+ * opacity:0 and LCP waits on the full JS bundle.
  */
 export default function Hero() {
   const { t } = useLang();
   const prefersReduced = useReducedMotion();
   const still = !!prefersReduced;
   const ref = useRef<HTMLElement>(null);
+
+  // Mount the three.js canvas only once the main thread is idle, keeping
+  // the ~1MB+ 3D bundle and its HDR environment off the critical path.
+  const [showModel, setShowModel] = useState(false);
+  useEffect(() => {
+    const start = () => setShowModel(true);
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(start, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = window.setTimeout(start, 1500);
+    return () => window.clearTimeout(id);
+  }, []);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   // Text fades only in the drive phase
@@ -44,12 +61,10 @@ export default function Hero() {
 
             <h1 className="font-display text-5xl leading-[1.05] font-bold sm:text-6xl lg:text-7xl">
               {t.hero.words.map((word, i) => (
-                <motion.span
+                <span
                   key={word}
-                  className="block"
-                  initial={still ? false : { opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 + i * 0.35, duration: 0.7, ease: [0.21, 0.65, 0.35, 1] }}
+                  className="hero-rise block"
+                  style={{ animationDelay: `${0.15 + i * 0.35}s` }}
                 >
                   {i === 2 ? (
                     /* the one emphasized word — primary navy, used nowhere else in the headline */
@@ -60,24 +75,20 @@ export default function Hero() {
                   ) : (
                     word
                   )}
-                </motion.span>
+                </span>
               ))}
             </h1>
 
-            <motion.p
-              className="mt-6 max-w-xl text-lg text-slate md:text-xl"
-              initial={still ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3, duration: 0.7 }}
+            <p
+              className="hero-rise mt-6 max-w-xl text-lg text-slate md:text-xl"
+              style={{ animationDelay: "1.3s" }}
             >
               {t.hero.tagline}
-            </motion.p>
+            </p>
 
-            <motion.div
-              className="mt-8 flex flex-wrap items-center gap-4"
-              initial={still ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.55, duration: 0.7 }}
+            <div
+              className="hero-rise mt-8 flex flex-wrap items-center gap-4"
+              style={{ animationDelay: "1.55s" }}
             >
               <a
                 href="#contact"
@@ -91,10 +102,15 @@ export default function Hero() {
               >
                 {t.nav.whatWeDo}
               </a>
-            </motion.div>
+            </div>
           </motion.div>
 
-          <RobotModel still={still} />
+          {showModel ? (
+            <RobotModel still={still} />
+          ) : (
+            /* same box as RobotModel's wrapper so the canvas mounts without layout shift */
+            <div className="relative mx-auto aspect-square w-full max-w-130" aria-hidden="true" />
+          )}
         </div>
 
         {/* Scroll-down cue */}

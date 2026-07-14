@@ -19,15 +19,13 @@ const byteLab = localFont({
 });
 
 
+// Only the weights the site actually uses (400/600/700) — each extra weight
+// is another preloaded font file on every page.
 const rigid = localFont({
   src: [
-    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Thin.otf", weight: "100", style: "normal" },
-    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraLight.otf", weight: "200", style: "normal" },
-    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Light.otf", weight: "300", style: "normal" },
     { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Regular.otf", weight: "400", style: "normal" },
     { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_SemiBold.otf", weight: "600", style: "normal" },
     { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_Bold.otf", weight: "700", style: "normal" },
-    { path: "../public/fonts/Rigid_Square/fonnts.com-Rigid_Square_ExtraBold.otf", weight: "800", style: "normal" },
   ],
   variable: "--font-rigid",
 });
