@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { strings } from "@/lib/strings";
+import { getPartnerLogos } from "@/lib/partners";
 import { LangProvider } from "@/components/LangProvider";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -58,7 +59,8 @@ export default function Home() {
           <Impact />
           <Testimonials />
           <ForYou />
-          <Partners />
+          {/* Partners section hidden for now — uncomment to show again. */}
+          {/* <Partners logos={getPartnerLogos()} /> */}
           <AboutTeaser />
           <FAQ />
           <Contact />
