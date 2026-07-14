@@ -40,11 +40,22 @@ export default function Footer() {
             {t.footer.social}
           </p>
           {/* [social links] — swap hrefs for real profiles */}
-          <ul className="mt-4 flex gap-4">
-            {["Facebook", "YouTube", "Telegram"].map((s) => (
-              <li key={s}>
-                <a href="#" className="text-sm text-blue-deep hover:text-primary">
-                  {s}
+          <ul className="mt-4 flex flex-wrap gap-4">
+            {[
+              { label: "Facebook", href: "https://www.facebook.com/bytelabkhfb" },
+              { label: "Telegram", href: "https://t.me/bytelabkh" },
+              { label: "Instagram", href: "https://www.instagram.com/bytelabkh/" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/bytelabkh" },
+              { label: "TikTok", href: "https://www.tiktok.com/@bytelabkh" },
+            ].map(({ label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-deep hover:text-primary"
+                >
+                  {label}
                 </a>
               </li>
             ))}

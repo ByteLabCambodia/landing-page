@@ -1,26 +1,33 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { SubmitEvent, useState } from "react";
+import { FaFacebookF, FaTelegramPlane, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { useLang } from "./LangProvider";
 
-// TODO: replace with the real inbox for the mailto handler
-const CONTACT_EMAIL = "hello@bytelab.example"; // [email]
-
-/** Closing CTA: flat light section, contact form (mailto stub) + details. */
+/** Closing CTA: flat light section, contact form (submits to /api/contact — email + Telegram) + details. */
 export default function Contact() {
   const { t } = useLang();
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    // Stub handler: opens the visitor's email app pre-filled.
-    // Swap for a real endpoint (e.g. Formspree, API route) when ready.
-    const subject = encodeURIComponent(`ByteLab inquiry from ${data.get("name")}`);
-    const body = encodeURIComponent(`${data.get("message")}\n\nReply to: ${data.get("email")}`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setError(false);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: data,
+    });
+
+    if (res.ok) {
+      setSent(true);
+      form.reset();
+    } else {
+      setError(true);
+    }
   }
 
   const inputCls =
@@ -70,6 +77,11 @@ export default function Contact() {
                   {t.contact.form.sent}
                 </p>
               )}
+              {error && (
+                <p role="alert" className="font-mono text-sm text-red-600">
+                  Something went wrong — please try again or email us directly.
+                </p>
+              )}
             </form>
           </Reveal>
 
@@ -99,14 +111,24 @@ export default function Contact() {
                   {t.contact.details.socialLabel}
                 </dt>
                 {/* [social links] — swap hrefs for real profiles */}
-                <dd className="mt-2 flex gap-3">
-                  {["Facebook", "YouTube", "Telegram"].map((s) => (
+                <dd className="mt-2 flex flex-wrap gap-3">
+                  {[
+                    { label: "Facebook", href: "https://www.facebook.com/bytelabkhfb", Icon: FaFacebookF },
+                    { label: "Telegram", href: "https://t.me/bytelabkh", Icon: FaTelegramPlane },
+                    { label: "Instagram", href: "https://www.instagram.com/bytelabkh/", Icon: FaInstagram },
+                    { label: "LinkedIn", href: "https://www.linkedin.com/company/bytelabkh", Icon: FaLinkedinIn },
+                    { label: "TikTok", href: "https://www.tiktok.com/@bytelabkh", Icon: FaTiktok },
+                  ].map(({ label, href, Icon }) => (
                     <a
-                      key={s}
-                      href="#"
-                      className="rounded-full border border-blue px-4 py-2 text-sm text-blue-deep transition-colors hover:bg-blue hover:text-white"
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="flex size-10 items-center justify-center rounded-full border border-blue text-blue-deep transition-colors hover:bg-blue hover:text-white"
                     >
-                      {s}
+                      <Icon className="size-4" />
                     </a>
                   ))}
                 </dd>
