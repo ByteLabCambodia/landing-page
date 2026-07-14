@@ -22,11 +22,6 @@ export default function Impact() {
             {t.impact.title}
           </h2>
         </Reveal>
-        {/* [remove this line once real figures are in] */}
-        <Reveal delay={0.15}>
-          <p className="mt-3 font-mono text-xs text-slate">{t.impact.line}</p>
-        </Reveal>
-
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {t.impact.stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>

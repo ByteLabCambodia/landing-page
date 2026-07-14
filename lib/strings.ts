@@ -190,12 +190,11 @@ export const strings = {
     impact: {
       eyebrow: "Impact",
       title: "The impact of ByteLab",
-      line: "Numbers below are placeholders — [update with real figures].",
       stats: [
-        { value: 1200, suffix: "+", label: "Students taught" },
-        { value: 25, suffix: "+", label: "Partner schools" },
-        { value: 80, suffix: "+", label: "Workshops run" },
-        { value: 500, suffix: "+", label: "Kits in classrooms" },
+        { value: 100, suffix: "+", label: "Students taught" },
+        { value: 5, suffix: "+", label: "Partner schools" },
+        { value: 5, suffix: "+", label: "Workshops run" },
+        { value: 100, suffix: "+", label: "Kits in classrooms" },
       ],
     },
     achievements: {
@@ -222,11 +221,11 @@ export const strings = {
           title: "ACTSmart Cohort 2: 2nd Place Winner",
           body: "Awarded second place in the ACTSmart incubation program, Cohort 2.",
         },
-        {
-          year: "2026",
-          title: "ACIR+ Program Incubation: Second Prize",
-          body: "Won second prize at the ACIR+ Program Incubation of Start-Ups and Innovation, held at VKU in Da Nang, Vietnam.",
-        },
+        // {
+        //   year: "2026",
+        //   title: "ACIR+ Program Incubation: Second Prize",
+        //   body: "Won second prize at the ACIR+ Program Incubation of Start-Ups and Innovation, held at VKU in Da Nang, Vietnam.",
+        // },
         {
           year: "Ongoing",
           title: "Agriculture Drone Project",
@@ -606,12 +605,11 @@ export const strings = {
     impact: {
       eyebrow: "ផលប៉ះពាល់",
       title: "ផលប៉ះពាល់របស់ ByteLab",
-      line: "តួលេខខាងក្រោមជាកន្លែងដាក់បណ្តោះអាសន្ន — [ធ្វើបច្ចុប្បន្នភាពជាមួយតួលេខពិត]។",
       stats: [
-        { value: 1200, suffix: "+", label: "សិស្សបានរៀន" },
-        { value: 25, suffix: "+", label: "សាលាដៃគូ" },
-        { value: 80, suffix: "+", label: "សិក្ខាសាលា" },
-        { value: 500, suffix: "+", label: "ឈុតក្នុងថ្នាក់រៀន" },
+        { value: 100, suffix: "+", label: "សិស្សបានរៀន" },
+        { value: 5, suffix: "+", label: "សាលាដៃគូ" },
+        { value: 5, suffix: "+", label: "សិក្ខាសាលា" },
+        { value: 100, suffix: "+", label: "ឈុតក្នុងថ្នាក់រៀន" },
       ],
     },
     achievements: {
@@ -638,11 +636,11 @@ export const strings = {
           title: "ACTSmart Cohort 2: ចំណាត់ថ្នាក់លេខ ២",
           body: "ទទួលបានចំណាត់ថ្នាក់លេខ ២ ក្នុងកម្មវិធី ACTSmart Cohort 2។",
         },
-        {
-          year: "2026",
-          title: "ACIR+ Program Incubation: រង្វាន់លេខ ២",
-          body: "ឈ្នះរង្វាន់លេខ ២ ក្នុងកម្មវិធី ACIR+ Program Incubation of Start-Ups and Innovation នៅសាកលវិទ្យាល័យ VKU ទីក្រុងដាណាំង ប្រទេសវៀតណាម។",
-        },
+        // {
+        //   year: "2026",
+        //   title: "ACIR+ Program Incubation: រង្វាន់លេខ ២",
+        //   body: "ឈ្នះរង្វាន់លេខ ២ ក្នុងកម្មវិធី ACIR+ Program Incubation of Start-Ups and Innovation នៅសាកលវិទ្យាល័យ VKU ទីក្រុងដាណាំង ប្រទេសវៀតណាម។",
+        // },
         {
           year: "កំពុងបន្ត",
           title: "គម្រោងដ្រូនកសិកម្ម",

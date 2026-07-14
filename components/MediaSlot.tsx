@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
@@ -19,7 +20,7 @@ import { motion, useReducedMotion } from "framer-motion";
  *             poster="/media/platform.jpg" />]
  *
  *  2 — PROJECTS (photos): three-tile collage, tiles stagger on reveal.
- *      [TODO: replace tiles with real workshop/build photos via <Image>.]
+ *      Photos live in /public/image.
  *
  *  3 — R&D (blueprint): SVG schematic that draws itself on scroll into
  *      view. Works as-is; swap for real prototype footage if you have it.
@@ -103,26 +104,47 @@ function VideoFrame() {
 function PhotoCollage() {
   const prefersReduced = useReducedMotion();
   const tiles = [
-    { label: "[workshop photo]", cls: "col-span-2 aspect-[2/1]" },
-    { label: "[build photo]", cls: "aspect-square" },
-    { label: "[team photo]", cls: "aspect-square" },
+    {
+      src: "/image/workshop.jpeg",
+      alt: "Students at a ByteLab workshop",
+      cls: "col-span-2",
+      sizes: "(max-width: 768px) 90vw, 480px",
+    },
+    {
+      src: "/image/bytecar.jpg",
+      alt: "ByteLab robot car build",
+      cls: "",
+      sizes: "(max-width: 768px) 45vw, 240px",
+    },
+    {
+      src: "/image/project_01.jpg",
+      alt: "ByteLab project team at work",
+      cls: "",
+      sizes: "(max-width: 768px) 45vw, 240px",
+    },
   ];
   return (
-    <div className="grid h-full min-h-56 content-center gap-3 bg-mist p-6">
-      <div className="grid grid-cols-2 gap-3">
-        {tiles.map((tile, i) => (
-          <motion.div
-            key={tile.label}
-            initial={prefersReduced ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ delay: i * 0.12, duration: 0.5 }}
-            className={`grid place-items-center rounded-xl border border-dashed border-blue/40 bg-white font-mono text-[10px] text-slate ${tile.cls}`}
-          >
-            {tile.label}
-          </motion.div>
-        ))}
-      </div>
+    // Rows split the card's fixed height (wide shot on top, two below) so
+    // the collage always fits without clipping.
+    <div className="grid h-full min-h-56 grid-cols-2 grid-rows-[3fr_2fr] gap-3 bg-mist p-6">
+      {tiles.map((tile, i) => (
+        <motion.div
+          key={tile.src}
+          initial={prefersReduced ? false : { opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ delay: i * 0.12, duration: 0.5 }}
+          className={`relative overflow-hidden rounded-xl border border-line bg-white ${tile.cls}`}
+        >
+          <Image
+            src={tile.src}
+            alt={tile.alt}
+            fill
+            sizes={tile.sizes}
+            className="object-cover"
+          />
+        </motion.div>
+      ))}
     </div>
   );
 }
